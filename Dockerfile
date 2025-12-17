@@ -15,13 +15,10 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir -r requirements.txt
 
-# Copiamos todo el código (asumiendo que main.py está en la raíz o ajusta según tu estructura)
-COPY . .
+COPY src/ ./src/
 
-# NO copiamos .env explícitamente (se ignora vía .dockerignore o no debería existir en build)
+# 2. Aseguramos que el PYTHONPATH incluya la carpeta src
+ENV PYTHONPATH=/app/src
 
-ENV PYTHONPATH=/app
-EXPOSE 8000
-
-# Ajuste del comando: si main.py está en la raíz, es "main:app", si está en src, es "src.main:app"
+# 3. Ejecutamos desde la carpeta src
 CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8000"]
