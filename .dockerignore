@@ -1,0 +1,14 @@
+# Ignore files that are not needed in the Docker image
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+.env
+.git/
+.gitignore
+Dockerfile
+docker-compose.yml
+README.md
+*.md

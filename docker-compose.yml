@@ -1,0 +1,17 @@
+services:
+  api:
+    build: .
+    container_name: python-api
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - APP_NAME=Python-API
+      - LOG_LEVEL=INFO
+      - HOST=0.0.0.0
+      - PORT=8000
+    volumes:
+      - .:/app
+      - ./src:/app/src
+    env_file:
+      - .env
