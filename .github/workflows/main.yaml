@@ -5,7 +5,7 @@ on:
 
 jobs:
   call-workflow:
-    uses: medaqueno/k8s-lab-gitops/.github/workflows/ci-cd-engine.yml@main
+    uses: medaqueno/k8s-lab-gitops/workflow-tempaltes/ci-cd-engine.yml@main
     with:
       app_name: "python-api-1"
     secrets:
