@@ -7,6 +7,9 @@ jobs:
   call-workflow:
     uses: medaqueno/k8s-lab-gitops/.github/workflows/ci-cd-engine.yml@main
     with:
+      # Podrías pasar variables aquí si las tuvieras
       app_name: "python-api-1"
     secrets:
+      # Se pasan los secretos que necesita el engine
+      # Nota: GITHUB_TOKEN se pasa automáticamente con el permiso de 'packages: write'
       GIT_OPS_SSH_KEY: ${{ secrets.GIT_OPS_SSH_KEY }}
