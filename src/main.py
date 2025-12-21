@@ -76,7 +76,7 @@ async def health_check() -> dict:
     logger.debug("Health check endpoint called")
     return {
         "status": "healthy",
-        "message": f"{settings.APP_NAME} is running successfully 1"
+        "message": f"{settings.APP_NAME} is running successfully 2."
     }
 
 
